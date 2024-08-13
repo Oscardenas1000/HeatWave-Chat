@@ -1,6 +1,6 @@
 <?php
 session_start(); // Start the session to store conversation history
-include 'dbconnect.php'; // Include the database connection
+include '../dbconnect.php'; // Include the database connection
 
 if (!isset($_SESSION['chat_history'])) {
     $_SESSION['chat_history'] = [];
