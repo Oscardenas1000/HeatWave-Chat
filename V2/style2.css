@@ -1,0 +1,129 @@
+/* General styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.chat-container {
+    background-color: #fff;
+    width: 60%;
+    max-width: 800px;
+    height: 90vh;
+    display: flex;
+    flex-direction: column;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+.chat-history {
+    flex-grow: 1;
+    padding: 20px;
+    overflow-y: auto;
+}
+
+.chat-message,
+.chat-response {
+    margin-bottom: 20px;
+    animation: drop-in 0.5s ease-in-out; /* Animation for new messages */
+}
+
+.chat-message {
+    text-align: right; /* Align text to the right */
+}
+
+.chat-message p {
+    display: inline-block;
+    background-color: #007BFF;
+    color: white;
+    padding: 10px;
+    border-radius: 10px;
+    max-width: 70%;
+    margin-left: auto;
+    position: relative;
+}
+
+.chat-message p strong {
+    position: absolute;
+    right: -70px; /* Position "You" label to the far right */
+    top: 50%;
+    transform: translateY(-50%);
+    color: #555;
+    font-weight: normal;
+}
+
+.chat-response p {
+    background-color: #f9f9f9;
+    padding: 10px;
+    border-radius: 10px;
+    border-left: 4px solid #007BFF;
+    max-width: 70%;
+}
+
+.chat-input-container {
+    padding: 20px;
+    background-color: #f9f9f9;
+    display: flex;
+    flex-direction: column; /* Stack items vertically */
+    align-items: stretch; /* Make items span the full width */
+    border-top: 1px solid #ddd;
+}
+
+.chat-input-container form {
+    display: flex;
+    flex-direction: column;
+    width: 100%; /* Make the form span the full width */
+}
+
+.chat-input-container input[type="text"],
+.chat-input-container button {
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    width: 100%; /* Make each element span the full width */
+    box-sizing: border-box; /* Include padding and border in the element's width */
+}
+
+.chat-input-container button {
+    background-color: #007BFF;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+}
+
+.chat-input-container button:hover {
+    background-color: #0056b3;
+}
+
+/* Position dropdown at the top left of the screen */
+#model-dropdown {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    z-index: 1000;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    background-color: #fff;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+}
+
+/* Animation for drop-in effect */
+@keyframes drop-in {
+    0% {
+        transform: translateY(-20px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
